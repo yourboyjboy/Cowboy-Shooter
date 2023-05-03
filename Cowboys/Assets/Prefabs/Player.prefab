@@ -323,7 +323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
-  fireRate: 1
+  shootCooldown: 2.5
   detectRadius: 10
   fireRadius: 5
   rotateSpeed: 1
@@ -716,19 +716,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1a84a2d4001c03142a5a1b3d5dcd2871, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.0005000001
+      value: 0.0005
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1a84a2d4001c03142a5a1b3d5dcd2871, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.00031
+      value: -0.00031000143
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1a84a2d4001c03142a5a1b3d5dcd2871, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.00042
+      value: 0.00041999877
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1a84a2d4001c03142a5a1b3d5dcd2871, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.00001
+      value: -0.000010000076
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1a84a2d4001c03142a5a1b3d5dcd2871, type: 3}
       propertyPath: m_LocalRotation.w
@@ -740,11 +740,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1a84a2d4001c03142a5a1b3d5dcd2871, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1a84a2d4001c03142a5a1b3d5dcd2871, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1a84a2d4001c03142a5a1b3d5dcd2871, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 
 public class CowboyController : MonoBehaviour
@@ -11,6 +12,7 @@ public class CowboyController : MonoBehaviour
     public float fireRadius = 5;
     public float rotateSpeed = 0.5f;
     public Camera camera;
+    private CinemachineFreeLook _freeLookComponent;
     public GameObject armature;
     private InputHandler _inputHandler;
     private Animator _animator;
@@ -20,6 +22,7 @@ public class CowboyController : MonoBehaviour
     private float currShootCooldown = 0;
     private LayerMask enemyLayer;
     private bool isDead = false;
+    private ParticleSystem gunshotEffect;
 
     private static readonly int Shoot = Animator.StringToHash("Shoot");
     private static readonly int Death = Animator.StringToHash("Death");
@@ -27,6 +30,7 @@ public class CowboyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gunshotEffect = GetComponentInChildren<ParticleSystem>();
         enemyLayer = LayerMask.NameToLayer("Enemy");
         enemies = new List<GameObject>(maxEnemiesDetectable);
         _inputHandler = GetComponent<InputHandler>();
@@ -100,6 +104,7 @@ public class CowboyController : MonoBehaviour
     {
         currShootCooldown = shootCooldown;
         _animator.SetTrigger(Shoot);
+        gunshotEffect.Play();
         var enemyScript = enemy.GetComponent<Enemy>();
         if (enemyScript)
             StartCoroutine(enemyScript.Die());
